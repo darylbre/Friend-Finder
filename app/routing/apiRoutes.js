@@ -1,5 +1,6 @@
 
 const friends = require("../data/friends.js");
+console.log(friends);
 
 module.exports = function (app) {
     
@@ -11,7 +12,7 @@ module.exports = function (app) {
 
 
     app.post("/api/friends", function (req, res) {
-        let totalDofference = 0;
+        let totalDifference = 0;
         let bestMatch = {
             name: "",
             photo: "",
@@ -64,13 +65,17 @@ module.exports = function (app) {
         console.log(userData);
         res.json(bestMatch);
     });
+
+
+    app.post("/api/clear", function (req, res) {
+        // Empty out the arrays of data
+        friends.length = 0;
+        res.json({ ok: true });
+    });
+
 }
 
 
 
-app.post("/api/clear", function (req, res) {
-    // Empty out the arrays of data
-    friends.length = 0;
-    res.json({ ok: true });
-});
+
 
