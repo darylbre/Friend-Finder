@@ -192,7 +192,7 @@
                     .then(function (data) {
                         console.log("data", data);
                         $(".modal-title").text(data.name);
-                        $(".modal-body").html(`<img src=${data.photo} />`);
+                        $(".modal-body").html(`<img src=${data.photo} style= "height: 300px; width: 300px" />`);
                         $("#myModal2").modal();
 
                     });
